@@ -173,7 +173,7 @@ export function HeroSection() {
         ))}
       </div>
       
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 py-20 sm:py-24 md:py-32 lg:py-40">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 py-20 sm:py-24 md:py-32 lg:py-40 pb-40 sm:pb-48 md:pb-56 lg:pb-40">
         <div className="lg:max-w-[62%]">
         {/* Eyebrow */}
         <div 
