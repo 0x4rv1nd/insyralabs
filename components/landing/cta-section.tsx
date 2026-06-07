@@ -87,26 +87,26 @@ export function CtaSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
-          className={`grid lg:grid-cols-12 gap-12 lg:gap-16 transition-all duration-1000 ${
+          className={`grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           {/* Left: heading */}
           <div className="lg:col-span-5">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#0BF3E0] mb-8">
-              <span className="w-12 h-px bg-[#0BF3E0]/50" />
+            <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-[#0BF3E0] mb-6 sm:mb-8">
+              <span className="w-6 sm:w-12 h-px bg-[#0BF3E0]/50" />
               Let&apos;s Work Together
             </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display tracking-tight leading-[0.95] mb-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight leading-[0.95] mb-6 sm:mb-8">
               Have a Project
               <br />
               in Mind?
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-md">
               Tell us what you&apos;re building. We&apos;ll help you figure out how to build it right.
             </p>
           </div>
@@ -115,33 +115,35 @@ export function CtaSection() {
           <div className="lg:col-span-7">
             <form
               onSubmit={handleSubmit}
-              className="relative border border-foreground/10 bg-foreground/[0.02] p-8 lg:p-10"
+              className="relative border border-foreground/10 bg-foreground/[0.02] p-6 sm:p-8 lg:p-10"
             >
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="firstName">First Name *</Label>
+                  <Label htmlFor="firstName" className="text-sm sm:text-base">First Name *</Label>
                   <Input 
                     id="firstName" 
                     name="firstName" 
                     placeholder="Jane" 
                     required 
                     disabled={isLoading}
+                    className="text-sm sm:text-base"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="lastName">Last Name <span className="text-muted-foreground">(Optional)</span></Label>
+                  <Label htmlFor="lastName" className="text-sm sm:text-base">Last Name <span className="text-muted-foreground text-xs">(Optional)</span></Label>
                   <Input 
                     id="lastName" 
                     name="lastName" 
                     placeholder="Doe" 
                     disabled={isLoading}
+                    className="text-sm sm:text-base"
                   />
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="email">Email Address *</Label>
+                  <Label htmlFor="email" className="text-sm sm:text-base">Email Address *</Label>
                   <Input 
                     id="email" 
                     name="email" 
@@ -149,10 +151,11 @@ export function CtaSection() {
                     placeholder="jane@company.com" 
                     required 
                     disabled={isLoading}
+                    className="text-sm sm:text-base"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Label htmlFor="phone" className="text-sm sm:text-base">Phone Number *</Label>
                   <Input 
                     id="phone" 
                     name="phone" 
@@ -160,14 +163,15 @@ export function CtaSection() {
                     placeholder="+91 98765 43210" 
                     required 
                     disabled={isLoading}
+                    className="text-sm sm:text-base"
                   />
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2 mb-6">
-                <Label htmlFor="projectType">Project Type <span className="text-muted-foreground">(Optional)</span></Label>
+              <div className="flex flex-col gap-2 mb-4 sm:mb-6">
+                <Label htmlFor="projectType" className="text-sm sm:text-base">Project Type <span className="text-muted-foreground text-xs">(Optional)</span></Label>
                 <Select name="projectType" disabled={isLoading}>
-                  <SelectTrigger id="projectType" className="w-full">
+                  <SelectTrigger id="projectType" className="w-full text-sm sm:text-base">
                     <SelectValue placeholder="Select a project type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -180,20 +184,21 @@ export function CtaSection() {
                 </Select>
               </div>
 
-              <div className="flex flex-col gap-2 mb-8">
-                <Label htmlFor="message">Message *</Label>
+              <div className="flex flex-col gap-2 mb-6 sm:mb-8">
+                <Label htmlFor="message" className="text-sm sm:text-base">Message *</Label>
                 <Textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={4}
                   placeholder="Tell us about your project, timeline, and budget..."
                   required
                   disabled={isLoading}
+                  className="text-sm sm:text-base"
                 />
               </div>
 
               {error && (
-                <p className="text-sm text-red-500 mb-4 text-center font-mono">
+                <p className="text-xs sm:text-sm text-red-500 mb-4 text-center font-mono">
                   {error}
                 </p>
               )}
@@ -202,7 +207,7 @@ export function CtaSection() {
                 type="submit"
                 size="lg"
                 disabled={isLoading || submitted}
-                className="w-full bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-14 text-base group disabled:opacity-70"
+                className="w-full bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-12 sm:h-14 text-sm sm:text-base group disabled:opacity-70"
               >
                 {isLoading ? (
                   <>
@@ -223,7 +228,7 @@ export function CtaSection() {
               </Button>
 
               {submitted && (
-                <p className="text-sm text-[#0BF3E0] mt-4 text-center font-mono">
+                <p className="text-xs sm:text-sm text-[#0BF3E0] mt-4 text-center font-mono">
                   Thanks — we&apos;ll be in touch within one business day.
                 </p>
               )}

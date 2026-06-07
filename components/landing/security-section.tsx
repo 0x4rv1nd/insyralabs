@@ -78,7 +78,7 @@ export function SecuritySection() {
           {values.map((value, index) => (
             <div
               key={value.title}
-              className={`group relative p-8 lg:p-12 border border-foreground/10 bg-foreground/[0.02] overflow-hidden transition-all duration-700 hover:border-[#0BF3E0]/40 hover:bg-[#0BF3E0]/[0.03] ${
+              className={`group relative p-6 sm:p-8 lg:p-12 border border-foreground/10 bg-foreground/[0.02] overflow-hidden transition-all duration-700 hover:border-[#0BF3E0]/40 hover:bg-[#0BF3E0]/[0.03] ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -86,11 +86,11 @@ export function SecuritySection() {
               <div className="pointer-events-none absolute -top-20 -right-20 w-48 h-48 rounded-full bg-[#0BF3E0]/0 blur-3xl transition-all duration-500 group-hover:bg-[#0BF3E0]/15" />
 
               <div className="relative z-10">
-                <div className="w-12 h-12 flex items-center justify-center border border-foreground/15 text-foreground/70 mb-8 transition-colors duration-500 group-hover:border-[#0BF3E0] group-hover:text-[#0BF3E0]">
-                  <value.icon className="w-5 h-5" />
+                <div className="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center border border-foreground/15 text-foreground/70 mb-6 sm:mb-8 transition-colors duration-500 group-hover:border-[#0BF3E0] group-hover:text-[#0BF3E0]">
+                  <value.icon className="w-4 sm:w-5 h-4 sm:h-5" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-display mb-4">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed max-w-md">{value.description}</p>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-display mb-3 sm:mb-4">{value.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md">{value.description}</p>
               </div>
             </div>
           ))}
