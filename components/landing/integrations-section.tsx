@@ -102,16 +102,16 @@ export function IntegrationsSection() {
     <section id="integrations" ref={sectionRef} className="relative overflow-hidden">
 
       {/* Header — centré verticalement sur l'image */}
-      <div className="relative z-10 pt-32 lg:pt-40 text-center">
-        <span className={`inline-flex items-center gap-4 text-sm font-mono text-[#0BF3E0] mb-8 transition-all duration-700 justify-center ${
+      <div className="relative z-10 pt-16 sm:pt-24 md:pt-32 lg:pt-40 text-center px-6 lg:px-12">
+        <span className={`inline-flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-mono text-[#0BF3E0] mb-6 sm:mb-8 transition-all duration-700 justify-center ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
-          <span className="w-12 h-px bg-[#0BF3E0]/50" />
+          <span className="w-6 sm:w-12 h-px bg-[#0BF3E0]/50" />
           Our Stack
-          <span className="w-12 h-px bg-[#0BF3E0]/50" />
+          <span className="w-6 sm:w-12 h-px bg-[#0BF3E0]/50" />
         </span>
 
-        <h2 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
+        <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
           Built with
@@ -119,7 +119,7 @@ export function IntegrationsSection() {
           <span className="text-muted-foreground">the best.</span>
         </h2>
 
-        <p className={`mt-8 text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto transition-all duration-1000 delay-100 ${
+        <p className={`mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto transition-all duration-1000 delay-100 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
           We work with modern, battle-tested technologies and platforms — choosing the right tools to build fast, scalable, and resilient products.
@@ -127,7 +127,7 @@ export function IntegrationsSection() {
       </div>
 
       {/* Full-width image */}
-      <div className={`relative left-1/2 -translate-x-1/2 w-screen -mt-16 transition-all duration-1000 delay-200 ${
+      <div className={`relative left-1/2 -translate-x-1/2 w-screen -mt-12 sm:-mt-16 lg:-mt-20 transition-all duration-1000 delay-200 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}>
         <img
@@ -140,11 +140,11 @@ export function IntegrationsSection() {
 
       {/* Integration grid — remonte sur l'image avec spacing mobile approprié */}
       <div className="relative z-10 mt-0 lg:-mt-24 max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-12 sm:mb-16">
           {integrations.map((integration, index) => (
             <div
               key={integration.name}
-              className={`group relative overflow-hidden p-6 lg:p-8 border transition-all duration-500 cursor-default ${
+              className={`group relative overflow-hidden p-4 sm:p-6 lg:p-8 border transition-all duration-500 cursor-default ${
                 hoveredIndex === index
                   ? "border-foreground bg-foreground/[0.04] scale-[1.02]"
                   : "border-foreground/10 hover:border-foreground/30"
@@ -177,7 +177,7 @@ export function IntegrationsSection() {
                 />
               )}
               {/* Category tag */}
-              <span className={`absolute top-3 right-3 text-[10px] font-mono px-2 py-0.5 transition-colors ${
+              <span className={`absolute top-2 sm:top-3 right-2 sm:right-3 text-[8px] sm:text-[10px] font-mono px-2 py-0.5 transition-colors ${
                 hoveredIndex === index
                   ? "bg-foreground text-background"
                   : "bg-foreground/10 text-muted-foreground"
@@ -186,13 +186,13 @@ export function IntegrationsSection() {
               </span>
 
               {/* Logo */}
-              <div className={`w-10 h-10 mb-6 flex items-center justify-center transition-colors ${
+              <div className={`w-8 sm:w-10 h-8 sm:h-10 mb-4 sm:mb-6 flex items-center justify-center transition-colors ${
                 hoveredIndex === index ? "text-white" : "text-foreground/60"
               }`}>
                 {logos[integration.name]}
               </div>
 
-              <span className="font-medium block">{integration.name}</span>
+              <span className="font-medium block text-sm sm:text-base">{integration.name}</span>
 
               {/* Animated underline */}
               <div className="absolute bottom-0 left-0 right-0 h-px bg-foreground/20 overflow-hidden">
@@ -205,23 +205,23 @@ export function IntegrationsSection() {
         </div>
 
         {/* Bottom stats row */}
-        <div className={`flex flex-wrap items-center justify-between gap-8 pt-12 border-t border-foreground/10 transition-all duration-1000 delay-500 pb-32 lg:pb-40 ${
+        <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8 pt-8 sm:pt-12 border-t border-foreground/10 transition-all duration-1000 delay-500 pb-20 sm:pb-32 lg:pb-40 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
-          <div className="flex flex-wrap gap-12">
+          <div className="flex flex-wrap gap-6 sm:gap-12">
             {[
               { value: "Modern", label: "Frameworks" },
               { value: "Cloud", label: "Native infra" },
               { value: "Scalable", label: "By design" },
             ].map((stat) => (
-              <div key={stat.label} className="flex items-baseline gap-3">
-                <span className="text-3xl font-display">{stat.value}</span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
+              <div key={stat.label} className="flex items-baseline gap-2 sm:gap-3">
+                <span className="text-2xl sm:text-3xl font-display">{stat.value}</span>
+                <span className="text-xs sm:text-sm text-muted-foreground">{stat.label}</span>
               </div>
             ))}
           </div>
 
-          <a href="#contact" className="group inline-flex items-center gap-2 text-sm font-mono text-[#0BF3E0] hover:text-foreground transition-colors">
+          <a href="#contact" className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-[#0BF3E0] hover:text-foreground transition-colors">
             Start a project
             <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>

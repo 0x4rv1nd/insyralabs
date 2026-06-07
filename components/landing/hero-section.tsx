@@ -173,24 +173,24 @@ export function HeroSection() {
         ))}
       </div>
       
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 py-20 sm:py-24 md:py-32 lg:py-40 pb-40 sm:pb-48 md:pb-56 lg:pb-40">
         <div className="lg:max-w-[62%]">
         {/* Eyebrow */}
         <div 
-          className={`mb-8 transition-all duration-700 ${
+          className={`mb-6 sm:mb-8 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#0BF3E0]">
-            <span className="w-8 h-px bg-[#0BF3E0]/50" />
+          <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-[#0BF3E0]">
+            <span className="w-6 sm:w-8 h-px bg-[#0BF3E0]/50" />
             Turning Ideas Into Revenue
           </span>
         </div>
         
         {/* Main headline */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <h1 
-            className={`text-left text-[clamp(2.5rem,6.5vw,7rem)] font-display leading-[0.92] tracking-tight text-white transition-all duration-1000 ${
+            className={`text-left text-[clamp(2rem,5vw,7rem)] font-display leading-[0.92] tracking-tight text-white transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -207,7 +207,7 @@ export function HeroSection() {
 
         {/* Subheadline */}
         <p
-          className={`text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl mb-10 transition-all duration-1000 delay-200 ${
+          className={`text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl mb-8 sm:mb-10 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -216,14 +216,14 @@ export function HeroSection() {
 
         {/* CTAs */}
         <div
-          className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-1000 delay-300 ${
+          className={`flex flex-col sm:flex-row items-start gap-3 sm:gap-4 transition-all duration-1000 delay-300 w-full sm:w-auto ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
           <Button
             size="lg"
             asChild
-            className="bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-14 px-8 text-base group transition-transform hover:scale-[1.03]"
+            className="bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base group transition-transform hover:scale-[1.03] w-full sm:w-auto"
           >
             <a href="#contact">
               Start a Project
@@ -234,7 +234,7 @@ export function HeroSection() {
             size="lg"
             variant="outline"
             asChild
-            className="rounded-full h-14 px-8 text-base border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+            className="rounded-full h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white w-full sm:w-auto"
           >
             <a href="#integrations">View Our Work</a>
           </Button>
@@ -244,19 +244,19 @@ export function HeroSection() {
       
       {/* Stats */}
       <div 
-        className={`absolute bottom-12 left-0 right-0 px-6 lg:px-12 transition-all duration-700 delay-500 ${
+        className={`absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 px-6 lg:px-12 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto flex items-start gap-10 lg:gap-20">
+        <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-start gap-6 sm:gap-10 lg:gap-20">
           {[
             { value: "10+", label: "projects delivered" },
             { value: "95%", label: "client retention rate" },
             { value: "2+", label: "years of experience" },
           ].map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-2">
-              <span className="text-3xl lg:text-4xl font-display text-white">{stat.value}</span>
-              <span className="text-xs text-white/50 leading-tight">
+            <div key={stat.label} className="flex flex-col gap-1 sm:gap-2">
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-display text-white">{stat.value}</span>
+              <span className="text-xs sm:text-sm text-white/50 leading-tight">
                 {stat.label}
               </span>
             </div>

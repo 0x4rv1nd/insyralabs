@@ -142,17 +142,17 @@ export function MetricsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 lg:py-40 overflow-hidden">
+    <section ref={sectionRef} className="relative py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 overflow-hidden">
       <GridBackground />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#0BF3E0] mb-6">
-            <span className="w-12 h-px bg-[#0BF3E0]/50" />
+        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+          <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-[#0BF3E0] mb-4 sm:mb-6">
+            <span className="w-6 sm:w-12 h-px bg-[#0BF3E0]/50" />
             By The Numbers
           </span>
-          <h2 className={`text-5xl md:text-7xl lg:text-[110px] font-display tracking-tight leading-[0.95] transition-all duration-1000 ${
+          <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[110px] font-display tracking-tight leading-[0.95] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             Results that
@@ -166,17 +166,17 @@ export function MetricsSection() {
           {metrics.map((metric, index) => (
             <div
               key={metric.label}
-              className={`bg-background p-8 lg:p-10 flex flex-col gap-4 transition-all duration-700 ${
+              className={`bg-background p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col gap-3 sm:gap-4 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="text-5xl md:text-6xl lg:text-7xl font-display tracking-tight">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display tracking-tight">
                 <AnimatedNumber end={metric.value} suffix={metric.suffix} prefix={metric.prefix} />
               </div>
               <div>
-                <div className="text-base text-foreground">{metric.label}</div>
-                <div className="text-sm text-muted-foreground font-mono mt-1">{metric.sublabel}</div>
+                <div className="text-sm sm:text-base text-foreground">{metric.label}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground font-mono mt-1">{metric.sublabel}</div>
               </div>
             </div>
           ))}

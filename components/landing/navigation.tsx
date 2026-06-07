@@ -40,31 +40,31 @@ export function Navigation() {
         }`}
       >
         <div 
-          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${
-            isScrolled ? "h-14" : "h-20"
+          className={`flex items-center justify-between transition-all duration-500 px-4 sm:px-6 lg:px-8 ${
+            isScrolled ? "h-12 sm:h-14" : "h-16 sm:h-20"
           }`}
         >
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-1.5 sm:gap-2.5 group shrink-0">
             <span
               className={`flex items-center justify-center rounded-md bg-[#0BF3E0] text-black font-display font-semibold transition-all duration-500 ${
-                isScrolled ? "w-7 h-7 text-sm" : "w-9 h-9 text-base"
+                isScrolled ? "w-6 h-6 sm:w-7 sm:h-7 text-xs sm:text-sm" : "w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base"
               }`}
             >
               I
             </span>
-            <span className={`font-display tracking-tight transition-all duration-500 whitespace-nowrap ${isScrolled ? "text-lg text-foreground" : "text-xl text-white"}`}>
-              INSYRA&nbsp;LABS
+            <span className={`font-display tracking-tight transition-all duration-500 whitespace-nowrap text-xs sm:text-sm lg:text-base ${isScrolled ? "text-base sm:text-lg text-foreground" : "text-lg sm:text-xl text-white"}`}>
+              INSYRA LABS
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-8 lg:gap-12">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm transition-colors duration-300 relative group ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/70 hover:text-white"}`}
+                className={`text-xs lg:text-sm transition-colors duration-300 relative group ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/70 hover:text-white"}`}
               >
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-foreground" : "bg-white"}`} />
@@ -77,7 +77,7 @@ export function Navigation() {
             <Button
               size="sm"
               asChild
-              className={`rounded-full transition-all duration-500 bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium ${isScrolled ? "px-5 h-8 text-xs" : "px-6"}`}
+              className={`rounded-full transition-all duration-500 bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium ${isScrolled ? "px-4 sm:px-5 h-8 sm:h-9 text-xs sm:text-sm" : "px-5 sm:px-6 h-9 sm:h-10 text-xs sm:text-sm"}`}
             >
               <a href="#contact">Let&apos;s Talk</a>
             </Button>
@@ -86,13 +86,13 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"}`}
+            className={`md:hidden p-1.5 sm:p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
             )}
           </button>
         </div>
@@ -108,15 +108,15 @@ export function Navigation() {
         }`}
         style={{ top: 0 }}
       >
-        <div className="flex flex-col h-full px-8 pt-28 pb-8">
+        <div className="flex flex-col h-full px-4 sm:px-8 pt-20 sm:pt-28 pb-6 sm:pb-8">
           {/* Navigation Links */}
-          <div className="flex-1 flex flex-col justify-center gap-8">
+          <div className="flex-1 flex flex-col justify-center gap-6 sm:gap-8">
             {navLinks.map((link, i) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
+                className={`text-3xl sm:text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-4"
@@ -129,7 +129,7 @@ export function Navigation() {
           </div>
           
           {/* Bottom CTAs */}
-          <div className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${
+          <div className={`flex gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-foreground/10 transition-all duration-500 ${
             isMobileMenuOpen 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-4"
@@ -138,7 +138,7 @@ export function Navigation() {
           >
             <Button 
               asChild
-              className="flex-1 bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-14 text-base"
+              className="flex-1 bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-12 sm:h-14 text-sm sm:text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <a href="#contact">Let&apos;s Talk</a>

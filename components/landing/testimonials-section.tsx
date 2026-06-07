@@ -78,9 +78,9 @@ export function TestimonialsSection() {
   const activeTestimonial = testimonials[activeIndex];
 
   return (
-    <section id="testimonials" ref={sectionRef} className="relative py-32 lg:py-40 bg-foreground text-background overflow-hidden">
+    <section id="testimonials" ref={sectionRef} className="relative py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 bg-foreground text-background overflow-hidden">
       {/* ASCII background pattern — deterministic to avoid hydration mismatch */}
-      <div className="absolute inset-0 font-mono text-[10px] text-background/[0.02] leading-tight overflow-hidden whitespace-pre select-none">
+      <div className="absolute inset-0 font-mono text-[8px] sm:text-[10px] text-background/[0.02] leading-tight overflow-hidden whitespace-pre select-none">
         {Array.from({ length: 60 }, (_, row) =>
           Array.from({ length: 100 }, (_, col) =>
             (row * 7 + col * 13) % 10 > 6 ? '"' : ' '
@@ -90,13 +90,13 @@ export function TestimonialsSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="flex items-center justify-between mb-20">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-12 sm:mb-16 lg:mb-20 gap-6 sm:gap-8">
           <div>
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-background/40 mb-4">
-              <span className="w-12 h-px bg-background/20" />
+            <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-background/40 mb-3 sm:mb-4">
+              <span className="w-6 sm:w-12 h-px bg-background/20" />
               Testimonials
             </span>
-            <h2 className={`text-4xl lg:text-5xl font-display transition-all duration-1000 ${
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
               Loved by the teams
@@ -104,50 +104,52 @@ export function TestimonialsSection() {
             </h2>
           </div>
           
-          {/* Navigation arrows */}
+          {/* Navigation arrows — hidden on mobile, show on lg */}
           <div className="hidden lg:flex items-center gap-2">
             <button
               onClick={goPrev}
-              className="p-4 border border-background/20 hover:bg-background/10 transition-colors"
+              className="p-3 sm:p-4 border border-background/20 hover:bg-background/10 transition-colors"
+              aria-label="Previous testimonial"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
             <button
               onClick={goNext}
-              className="p-4 border border-background/20 hover:bg-background/10 transition-colors"
+              className="p-3 sm:p-4 border border-background/20 hover:bg-background/10 transition-colors"
+              aria-label="Next testimonial"
             >
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Main content - Split layout */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        {/* Main content - Stack on mobile, split on lg */}
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20">
           {/* Quote side */}
           <div className="lg:col-span-7 relative">
             {/* Large quote mark */}
-            <span className="absolute -left-4 -top-8 text-[200px] font-display text-background/5 leading-none select-none">
+            <span className="absolute -left-2 sm:-left-4 -top-6 sm:-top-8 text-[80px] sm:text-[150px] lg:text-[200px] font-display text-background/5 leading-none select-none">
               &ldquo;
             </span>
             
             <div className="relative">
               <blockquote 
                 key={activeIndex}
-                className="text-3xl lg:text-4xl xl:text-5xl font-display leading-[1.2] tracking-tight animate-fadeSlideIn"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-[1.2] tracking-tight animate-fadeSlideIn"
               >
                 {activeTestimonial.quote}
               </blockquote>
 
               {/* Author */}
-              <div className="mt-12 flex items-center gap-6">
-                <div className="w-14 h-14 rounded-full bg-background/10 flex items-center justify-center">
-                  <span className="font-display text-xl">
+              <div className="mt-8 sm:mt-12 flex items-center gap-4 sm:gap-6">
+                <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-background/10 flex items-center justify-center shrink-0">
+                  <span className="font-display text-lg sm:text-xl">
                     {activeTestimonial.author.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="text-lg font-medium">{activeTestimonial.author}</p>
-                  <p className="text-background/60">
+                  <p className="text-base sm:text-lg font-medium">{activeTestimonial.author}</p>
+                  <p className="text-sm sm:text-base text-background/60">
                     {activeTestimonial.role}, {activeTestimonial.company}
                   </p>
                 </div>
@@ -156,16 +158,16 @@ export function TestimonialsSection() {
           </div>
 
           {/* Metric cards side */}
-          <div className="lg:col-span-5 flex flex-col justify-center gap-6">
+          <div className="lg:col-span-5 flex flex-col justify-center gap-4 sm:gap-6">
             {/* Active metric - Large */}
             <div 
               key={`metric-${activeIndex}`}
-              className="p-10 border border-background/20 bg-background/5 animate-fadeSlideIn"
+              className="p-6 sm:p-10 border border-background/20 bg-background/5 animate-fadeSlideIn"
             >
-              <span className="text-7xl lg:text-8xl font-display block mb-4">
+              <span className="text-5xl sm:text-7xl lg:text-8xl font-display block mb-3 sm:mb-4">
                 {activeTestimonial.metric.value}
               </span>
-              <span className="text-lg text-background/60">
+              <span className="text-base sm:text-lg text-background/60">
                 {activeTestimonial.metric.label}
               </span>
             </div>
@@ -177,6 +179,7 @@ export function TestimonialsSection() {
                   key={idx}
                   onClick={() => goTo(idx)}
                   className="flex-1 h-1 bg-background/20 overflow-hidden"
+                  aria-label={`Go to testimonial ${idx + 1}`}
                 >
                   <div 
                     className={`h-full bg-background transition-all duration-300 ${
@@ -189,16 +192,16 @@ export function TestimonialsSection() {
             </div>
 
             {/* Company list */}
-            <div className="mt-4 pt-6 border-t border-background/10">
-              <span className="text-xs font-mono text-background/30 uppercase tracking-widest block mb-4">
+            <div className="mt-2 sm:mt-4 pt-4 sm:pt-6 border-t border-background/10">
+              <span className="text-[10px] sm:text-xs font-mono text-background/30 uppercase tracking-widest block mb-3 sm:mb-4">
                 Featured companies
               </span>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {testimonials.map((t, idx) => (
                   <button
                     key={t.company}
                     onClick={() => goTo(idx)}
-                    className={`px-4 py-2 text-sm border transition-all ${
+                    className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm border transition-all ${
                       idx === activeIndex 
                         ? "border-background/40 text-background" 
                         : "border-background/10 text-background/40 hover:border-background/30"
