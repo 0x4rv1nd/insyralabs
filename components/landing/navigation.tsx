@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home",     href: "/"             },
+  { name: "Products", href: "/#products"    },
   { name: "Work",     href: "/work"         },
   { name: "Services", href: "/services"     },
   { name: "About",    href: "/about"        },
@@ -33,7 +34,7 @@ export function Navigation() {
       }`}
     >
       <nav 
-        className={`mx-auto transition-all duration-500 ${
+        className={`mx-auto transition-all duration-500 relative z-50 ${
           isScrolled || isMobileMenuOpen
             ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
             : "bg-transparent max-w-[1400px]"
@@ -79,7 +80,7 @@ export function Navigation() {
               asChild
               className={`rounded-full transition-all duration-500 bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium ${isScrolled ? "px-4 sm:px-5 h-8 sm:h-9 text-xs sm:text-sm" : "px-5 sm:px-6 h-9 sm:h-10 text-xs sm:text-sm"}`}
             >
-              <a href="#contact">Let&apos;s Talk</a>
+              <a href="/contact">Let&apos;s Talk</a>
             </Button>
           </div>
 
@@ -101,12 +102,13 @@ export function Navigation() {
       
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 bg-background/95 backdrop-blur-2xl z-40 transition-all duration-500 ${
           isMobileMenuOpen 
             ? "opacity-100 pointer-events-auto" 
             : "opacity-0 pointer-events-none"
         }`}
         style={{ top: 0 }}
+        onClick={() => setIsMobileMenuOpen(false)}
       >
         <div className="flex flex-col h-full px-4 sm:px-8 pt-20 sm:pt-28 pb-6 sm:pb-8">
           {/* Navigation Links */}
@@ -116,7 +118,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-3xl sm:text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
+                className={`text-3xl sm:text-5xl font-display text-foreground hover:text-[#0BF3E0] transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-4"
@@ -141,7 +143,7 @@ export function Navigation() {
               className="flex-1 bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-12 sm:h-14 text-sm sm:text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <a href="#contact">Let&apos;s Talk</a>
+              <a href="/contact">Let&apos;s Talk</a>
             </Button>
           </div>
         </div>

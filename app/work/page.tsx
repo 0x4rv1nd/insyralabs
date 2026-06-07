@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/landing/navigation";
+import { ProductsSection } from "@/components/landing/products-section";
 import { IntegrationsSection } from "@/components/landing/integrations-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { FooterSection } from "@/components/landing/footer-section";
@@ -36,6 +37,7 @@ export default function WorkPage() {
         </div>
       </section>
       
+      <ProductsSection />
       <IntegrationsSection />
       <TestimonialsSection />
       <FooterSection />

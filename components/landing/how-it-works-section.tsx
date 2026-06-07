@@ -57,7 +57,7 @@ export function HowItWorksSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header — titre + image cerisier */}
-        <div className="relative mb-8 sm:mb-12 lg:mb-0 grid lg:grid-cols-2 gap-4 lg:gap-12 items-end">
+        <div className="relative mb-0 grid lg:grid-cols-2 gap-4 lg:gap-12 items-end">
           {/* Titre colonne gauche */}
           <div className="overflow-hidden pb-0 lg:pb-32">
             <div className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>

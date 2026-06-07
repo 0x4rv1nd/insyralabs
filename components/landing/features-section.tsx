@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
 import {
   Smartphone,
   PenTool,
@@ -10,7 +9,6 @@ import {
   Code2,
   Terminal,
   Database,
-  ArrowRight,
 } from "lucide-react";
 
 const services = [
@@ -151,26 +149,6 @@ export function FeaturesSection() {
             </div>
           ))}
 
-          {/* CTA card filling the 8th cell */}
-          <div
-            className={`relative p-6 sm:p-8 lg:p-10 bg-[#0BF3E0]/[0.06] border border-[#0BF3E0]/30 flex flex-col justify-between transition-all duration-500 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-            style={{ transitionDelay: `${services.length * 70}ms` }}
-          >
-            <p className="text-lg sm:text-xl font-display leading-snug mb-6 sm:mb-8">
-              Ready to bring your idea to life?
-            </p>
-            <Button
-              asChild
-              className="bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-11 sm:h-12 px-6 group self-start text-sm sm:text-base"
-            >
-              <a href="#contact">
-                Explore All Services
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-          </div>
         </div>
       </div>
     </section>

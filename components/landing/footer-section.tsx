@@ -1,6 +1,6 @@
 "use client";
 
-const footerLinks = {
+const footerLinks: Record<string, { name: string; href: string; badge?: string }[]> = {
   Services: [
     { name: "Web Applications", href: "/services" },
     { name: "Mobile Apps", href: "/services" },
@@ -10,11 +10,12 @@ const footerLinks = {
   Company: [
     { name: "About", href: "/about" },
     { name: "Our Values", href: "/about#values" },
-    { name: "How We Work", href: "/about#how-it-works" },
+    { name: "How We Work", href: "/#how-it-works" },
   ],
   Resources: [
-    { name: "Our Stack", href: "#integrations" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Our Products", href: "/#products" },
+    { name: "Our Stack", href: "/#integrations" },
+    { name: "Testimonials", href: "/#testimonials" },
     { name: "Contact", href: "/contact" },
   ],
 };
