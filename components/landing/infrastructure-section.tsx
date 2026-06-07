@@ -19,20 +19,20 @@ export function InfrastructureSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-32 lg:py-40 overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-16">
-          <span className={`inline-flex items-center gap-4 text-sm font-mono text-[#0BF3E0] mb-8 transition-all duration-700 ${
+        <div className="mb-12 sm:mb-16 lg:mb-20">
+          <span className={`inline-flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-mono text-[#0BF3E0] mb-6 sm:mb-8 transition-all duration-700 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}>
-            <span className="w-12 h-px bg-[#0BF3E0]/50" />
+            <span className="w-6 sm:w-12 h-px bg-[#0BF3E0]/50" />
             Who We Are
           </span>
 
-          <div className="grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[auto_1fr] gap-6 sm:gap-8 lg:gap-16 items-center">
             {/* Abstract visual — left */}
-            <div className={`w-48 lg:w-80 xl:w-96 shrink-0 transition-all duration-1000 ${
+            <div className={`w-32 sm:w-48 lg:w-80 xl:w-96 shrink-0 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
               <img
@@ -43,7 +43,7 @@ export function InfrastructureSection() {
             </div>
 
             {/* Title */}
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-display tracking-tight leading-[1.02] transition-all duration-1000 ${
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display tracking-tight leading-[1.02] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
               We Build at the{" "}
@@ -54,14 +54,14 @@ export function InfrastructureSection() {
         </div>
 
         {/* Paragraphs + stat */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div className={`lg:col-span-8 space-y-6 transition-all duration-1000 delay-100 ${
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
+          <div className={`lg:col-span-8 space-y-4 sm:space-y-6 transition-all duration-1000 delay-100 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
-            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
               Insyra Labs is a full-service digital agency founded on the belief that great software should be both powerful and beautiful. We partner with startups and growing businesses to create digital products that are built to last.
             </p>
-            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
               Our team of designers, engineers, and strategists bring deep technical expertise and creative thinking to every project — delivering solutions that don&apos;t just look good, but actually move the needle.
             </p>
           </div>
@@ -70,9 +70,9 @@ export function InfrastructureSection() {
           <div className={`lg:col-span-4 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
-            <div className="p-10 border border-[#0BF3E0]/30 bg-[#0BF3E0]/[0.05]">
-              <span className="text-6xl lg:text-7xl font-display text-[#0BF3E0]">2+</span>
-              <span className="block text-base text-foreground mt-3">
+            <div className="p-6 sm:p-8 lg:p-10 border border-[#0BF3E0]/30 bg-[#0BF3E0]/[0.05]">
+              <span className="text-5xl sm:text-6xl lg:text-7xl font-display text-[#0BF3E0]">2+</span>
+              <span className="block text-sm sm:text-base text-foreground mt-3">
                 Years of Industry Experience
               </span>
             </div>

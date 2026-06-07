@@ -85,19 +85,19 @@ export function FeaturesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="relative mb-16 lg:mb-24">
-          <div className="grid lg:grid-cols-12 gap-8 items-end">
+        <div className="relative mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-end">
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-3 text-sm font-mono text-[#0BF3E0] mb-6">
-                <span className="w-12 h-px bg-[#0BF3E0]/50" />
+              <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-[#0BF3E0] mb-4 sm:mb-6">
+                <span className="w-6 sm:w-12 h-px bg-[#0BF3E0]/50" />
                 What We Do
               </span>
               <h2
-                className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
+                className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -108,7 +108,7 @@ export function FeaturesSection() {
             </div>
             <div className="lg:col-span-5 lg:pb-4">
               <p
-                className={`text-xl text-muted-foreground leading-relaxed transition-all duration-1000 delay-200 ${
+                className={`text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed transition-all duration-1000 delay-200 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
@@ -119,11 +119,11 @@ export function FeaturesSection() {
         </div>
 
         {/* Services grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {services.map((service, index) => (
             <div
               key={service.number}
-              className={`group relative p-8 lg:p-10 bg-foreground/[0.02] border border-foreground/10 overflow-hidden transition-all duration-500 hover:border-[#0BF3E0]/40 hover:bg-[#0BF3E0]/[0.03] ${
+              className={`group relative p-6 sm:p-8 lg:p-10 bg-foreground/[0.02] border border-foreground/10 overflow-hidden transition-all duration-500 hover:border-[#0BF3E0]/40 hover:bg-[#0BF3E0]/[0.03] ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${index * 70}ms` }}
@@ -132,16 +132,16 @@ export function FeaturesSection() {
               <div className="pointer-events-none absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#0BF3E0]/0 blur-3xl transition-all duration-500 group-hover:bg-[#0BF3E0]/20" />
 
               <div className="relative z-10">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-12 h-12 flex items-center justify-center border border-foreground/15 text-foreground/70 transition-colors duration-500 group-hover:border-[#0BF3E0] group-hover:text-[#0BF3E0]">
-                    <service.icon className="w-5 h-5" />
+                <div className="flex items-center justify-between mb-6 sm:mb-8">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center border border-foreground/15 text-foreground/70 transition-colors duration-500 group-hover:border-[#0BF3E0] group-hover:text-[#0BF3E0]">
+                    <service.icon className="w-4 sm:w-5 h-4 sm:h-5" />
                   </div>
-                  <span className="font-mono text-sm text-muted-foreground">{service.number}</span>
+                  <span className="font-mono text-xs sm:text-sm text-muted-foreground">{service.number}</span>
                 </div>
-                <h3 className="text-2xl font-display mb-4 group-hover:translate-x-1 transition-transform duration-500">
+                <h3 className="text-xl sm:text-2xl font-display mb-3 sm:mb-4 group-hover:translate-x-1 transition-transform duration-500">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
 
               {/* bottom underline */}
@@ -153,17 +153,17 @@ export function FeaturesSection() {
 
           {/* CTA card filling the 8th cell */}
           <div
-            className={`relative p-8 lg:p-10 bg-[#0BF3E0]/[0.06] border border-[#0BF3E0]/30 flex flex-col justify-between transition-all duration-500 ${
+            className={`relative p-6 sm:p-8 lg:p-10 bg-[#0BF3E0]/[0.06] border border-[#0BF3E0]/30 flex flex-col justify-between transition-all duration-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
             style={{ transitionDelay: `${services.length * 70}ms` }}
           >
-            <p className="text-xl font-display leading-snug mb-8">
+            <p className="text-lg sm:text-xl font-display leading-snug mb-6 sm:mb-8">
               Ready to bring your idea to life?
             </p>
             <Button
               asChild
-              className="bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-12 px-6 group self-start"
+              className="bg-[#0BF3E0] hover:bg-[#0BF3E0]/90 text-black font-medium rounded-full h-11 sm:h-12 px-6 group self-start text-sm sm:text-base"
             >
               <a href="#contact">
                 Explore All Services
