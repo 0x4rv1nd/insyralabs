@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Home",     href: "/"             },
-  { name: "Products", href: "/#products"    },
-  { name: "Work",     href: "/work"         },
-  { name: "Services", href: "/services"     },
-  { name: "About",    href: "/about"        },
-  { name: "Contact",  href: "/contact"      },
+  { name: "Home",              href: "/" },
+  { name: "Products",          href: "/#products" },
+  { name: "Work",              href: "/work" },
+  { name: "Services",          href: "/services" },
+  { name: "About",             href: "/about" },
+  { name: "Meta Integrations", href: "/meta-integrations" },
+  { name: "Contact",           href: "/contact" },
 ];
 
 export function Navigation() {
@@ -24,6 +25,13 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header
@@ -88,7 +96,8 @@ export function Navigation() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-1.5 sm:p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"}`}
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5 sm:w-6 sm:h-6" />

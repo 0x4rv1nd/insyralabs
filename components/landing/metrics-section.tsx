@@ -10,12 +10,22 @@ const metrics = [
 ];
 
 function AnimatedNumber({ end, suffix = "", prefix = "" }: { end: number; suffix?: string; prefix?: string }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const [isScrambling, setIsScrambling] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      setCount(end);
+      setIsScrambling(false);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
@@ -33,10 +43,25 @@ function AnimatedNumber({ end, suffix = "", prefix = "" }: { end: number; suffix
           requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0 }
     );
     if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+
+    // Safety fallback: guarantee final values even if observer never fires
+    const fallback = setTimeout(() => {
+      setHasAnimated((animated) => {
+        if (!animated) {
+          setCount(end);
+          setIsScrambling(false);
+        }
+        return animated;
+      });
+    }, 4000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, [end, hasAnimated]);
 
   const displayValue = count.toLocaleString();

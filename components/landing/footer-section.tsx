@@ -1,22 +1,27 @@
 "use client";
 
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site";
+
 const footerLinks: Record<string, { name: string; href: string; badge?: string }[]> = {
+  Company: [
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Products", href: "/#products" },
+    { name: "Our Work", href: "/work" },
+    { name: "Meta Integrations", href: "/meta-integrations" },
+    { name: "Contact", href: "/contact" },
+  ],
   Services: [
     { name: "Web Applications", href: "/services" },
     { name: "Mobile Apps", href: "/services" },
     { name: "AI & Automation", href: "/services" },
     { name: "UI/UX Design", href: "/services" },
+    { name: "Social Media Automation", href: "/services" },
   ],
-  Company: [
-    { name: "About", href: "/about" },
-    { name: "Our Values", href: "/about#values" },
-    { name: "How We Work", href: "/#how-it-works" },
-  ],
-  Resources: [
-    { name: "Our Products", href: "/#products" },
-    { name: "Our Stack", href: "/#integrations" },
-    { name: "Testimonials", href: "/#testimonials" },
-    { name: "Contact", href: "/contact" },
+  Legal: [
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Data Deletion", href: "/data-deletion" },
   ],
 };
 
@@ -29,7 +34,7 @@ const footerStats = [
 
 export function FooterSection() {
   return (
-    <footer className="relative bg-black">
+    <footer className="relative bg-black border-t border-white/10">
       {/* Panoramic banner image */}
       <div className="relative w-full h-[180px] sm:h-[240px] md:h-[300px] lg:h-[380px] overflow-hidden">
         <img
@@ -54,19 +59,29 @@ export function FooterSection() {
 
         {/* Main Footer */}
         <div className="py-12 sm:py-16 lg:py-20">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 lg:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
             {/* Brand Column */}
             <div className="col-span-2 sm:col-span-1">
-              <a href="#" className="inline-flex items-center gap-2 sm:gap-2.5 mb-4 sm:mb-6">
+              <a href="/" className="inline-flex items-center gap-2 sm:gap-2.5 mb-4 sm:mb-6">
                 <span className="flex items-center justify-center w-7 sm:w-9 h-7 sm:h-9 rounded-md bg-[#0BF3E0] text-black font-display font-semibold text-sm sm:text-base">
                   I
                 </span>
                 <span className="text-sm sm:text-xl font-display text-white whitespace-nowrap">INSYRA LABS</span>
               </a>
 
-              <p className="text-xs sm:text-sm text-white/50 leading-relaxed mb-6 sm:mb-8 max-w-xs">
+              <p className="text-xs sm:text-sm text-white/50 leading-relaxed mb-4 max-w-xs">
                 From idea to impact. We design and engineer custom software, web, and AI products for modern businesses.
               </p>
+
+              <div className="text-[11px] sm:text-xs text-white/40 space-y-1 font-mono mb-6">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="block hover:text-[#0BF3E0] transition-colors">
+                  Email: {CONTACT_EMAIL}
+                </a>
+                <a href={CONTACT_PHONE_HREF} className="block hover:text-[#0BF3E0] transition-colors">
+                  Phone: {CONTACT_PHONE_DISPLAY}
+                </a>
+                <span className="block">insyralabs.vercel.app</span>
+              </div>
             </div>
 
             {/* Link Columns */}

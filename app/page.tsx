@@ -8,9 +8,14 @@ import { MetricsSection } from "@/components/landing/metrics-section";
 import { IntegrationsSection } from "@/components/landing/integrations-section";
 import { SecuritySection } from "@/components/landing/security-section";
 import { DevelopersSection } from "@/components/landing/developers-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
+
+export const metadata = {
+  alternates: {
+    canonical: "https://insyralabs.vercel.app/",
+  },
+};
 
 export default function Home() {
   return (
@@ -25,7 +30,6 @@ export default function Home() {
       <IntegrationsSection />
       <SecuritySection />
       <DevelopersSection />
-      <TestimonialsSection />
       <CtaSection />
       <FooterSection />
     </main>

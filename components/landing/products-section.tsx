@@ -15,11 +15,21 @@ const products = [
   {
     tag: "Wireless Printing",
     title: "QRPress",
-    description: "An instant wireless printing solution that enables users to print documents, receipts, and labels directly via QR code scanning.",
+    description: "An instant wireless printing solution that enables users to print documents, receipts, and labels directly via QR code scanning. Developed and operated by Insyra Labs, QRPress integrates with supported Meta services to provide authorized business functionality.",
     icon: Printer,
     color: "#10B981",
-    features: ["Scan-to-Print API", "Multi-format Document Support", "Zero-Driver Setup"],
+    features: ["Scan-to-Print API", "Multi-format Document Support", "Zero-Driver Setup", "Supported Meta Service Integrations"],
     demoLink: "https://www.qrpress.in",
+  },
+  {
+    tag: "E-commerce Platform",
+    title: "AR Sarees",
+    description: "A dedicated online storefront for sarees, built and operated by the Insyra Labs team.",
+    icon: Sparkles,
+    color: "#EC4899",
+    features: [],
+    demoLink: "#contact",
+    status: "In Development",
   },
   {
     tag: "Job Board Platform",
@@ -100,7 +110,7 @@ export function ProductsSection() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {products.map((product, index) => {
             const Icon = product.icon;
             const isHovered = hoveredIndex === index;
@@ -140,6 +150,19 @@ export function ProductsSection() {
                     </div>
                   </div>
 
+                  {"status" in product && product.status && (
+                    <span
+                      className="inline-block mb-3 font-mono text-[10px] sm:text-xs uppercase tracking-wider px-3 py-1 border"
+                      style={{
+                        color: product.color,
+                        borderColor: `${product.color}55`,
+                        backgroundColor: `${product.color}0f`,
+                      }}
+                    >
+                      {product.status}
+                    </span>
+                  )}
+
                   {/* Product Title & Description */}
                   <h3 className="text-2xl sm:text-3xl font-display mb-4 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
                     {product.title}
@@ -149,14 +172,16 @@ export function ProductsSection() {
                   </p>
 
                   {/* Bullet points */}
-                  <ul className="space-y-2.5 mb-10 border-t border-foreground/5 pt-6">
-                    {product.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/85">
-                        <Sparkles className="w-3.5 h-3.5 mt-1 shrink-0 text-[#0BF3E0]" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {product.features.length > 0 && (
+                    <ul className="space-y-2.5 mb-10 border-t border-foreground/5 pt-6">
+                      {product.features.map((feature, fIdx) => (
+                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/85">
+                          <Sparkles className="w-3.5 h-3.5 mt-1 shrink-0 text-[#0BF3E0]" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
 
                 {/* Button */}
@@ -171,7 +196,7 @@ export function ProductsSection() {
                     rel={product.demoLink.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="flex items-center justify-center gap-2"
                   >
-                    {product.demoLink.startsWith("http") ? "Visit Website" : "Request Integration Access"}
+                    {"status" in product && product.status ? "Request Early Access" : product.demoLink.startsWith("http") ? "Visit Website" : "Request Integration Access"}
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </Button>

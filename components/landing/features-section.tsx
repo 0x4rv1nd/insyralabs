@@ -17,49 +17,49 @@ const services = [
     icon: Smartphone,
     title: "Mobile App Development",
     description:
-      "We craft native and cross-platform apps for iOS and Android that users love and businesses rely on.",
+      "Custom iOS and Android applications designed to streamline customer engagement and field operations, featuring real-time syncing and offline capabilities.",
   },
   {
     number: "02",
     icon: PenTool,
     title: "UI/UX Design",
     description:
-      "Intuitive, stunning interfaces designed around your users — because great design converts.",
+      "User-centric research and interface design that reduces churn, improves conversion rates, and ensures a seamless experience across web and mobile layouts.",
   },
   {
     number: "03",
     icon: Bot,
     title: "AI & Automation",
     description:
-      "Custom AI workflows that eliminate repetitive tasks, reduce costs, and unlock smarter operations.",
+      "Custom LLM integrations, document parser engines, and workflow bots that eliminate manual data entry and accelerate business operations.",
   },
   {
     number: "04",
     icon: Share2,
     title: "Social Media Automation",
     description:
-      "Automate scheduling, posting, and analytics across platforms so your team focuses on strategy, not logistics.",
+      "Business social media automation solutions for scheduling, publishing, workflow automation, and analytics across supported platforms (such as Facebook Pages and Instagram Professional profiles).",
   },
   {
     number: "05",
     icon: Code2,
     title: "Web Applications",
     description:
-      "Scalable, fast, and resilient web apps built with modern stacks — designed to handle real growth.",
+      "Modern cloud-hosted SaaS applications built with secure Next.js and React frontends, engineered for thousands of concurrent business users.",
   },
   {
     number: "06",
     icon: Terminal,
     title: "Custom Software",
     description:
-      "Bespoke software engineered from the ground up to solve the exact problems your business faces.",
+      "Bespoke internal tools, CRM solutions, and RESTful API integrations built to bridge communication between fragmented software ecosystems.",
   },
   {
     number: "07",
     icon: Database,
     title: "ERP Systems",
     description:
-      "Integrated enterprise systems that connect your operations, people, and data in one powerful platform.",
+      "Custom resource management systems that consolidate inventory tracking, scheduling, staff attendance, and payroll databases into a single interface.",
   },
 ];
 

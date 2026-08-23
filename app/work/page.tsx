@@ -1,12 +1,27 @@
 import { Navigation } from "@/components/landing/navigation";
 import { ProductsSection } from "@/components/landing/products-section";
 import { IntegrationsSection } from "@/components/landing/integrations-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata = {
-  title: "Our Work | Insyra Labs",
-  description: "Explore our portfolio of web applications, mobile apps, and AI-powered solutions built for modern businesses.",
+  title: "Our Work",
+  description:
+    "Explore Insyra Labs products and projects: web applications, mobile apps, automation platforms, and AI-powered solutions built for modern businesses.",
+  alternates: {
+    canonical: "https://insyralabs.vercel.app/work",
+  },
+  openGraph: {
+    title: "Our Work | Insyra Labs",
+    description:
+      "Explore Insyra Labs products and projects built for modern businesses.",
+    url: "https://insyralabs.vercel.app/work",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Work | Insyra Labs",
+    description:
+      "Explore Insyra Labs products and projects built for modern businesses.",
+  },
 };
 
 export default function WorkPage() {
@@ -39,7 +54,6 @@ export default function WorkPage() {
       
       <ProductsSection />
       <IntegrationsSection />
-      <TestimonialsSection />
       <FooterSection />
     </main>
   );

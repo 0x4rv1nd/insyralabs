@@ -5,8 +5,24 @@ import { DevelopersSection } from "@/components/landing/developers-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata = {
-  title: "Services | Insyra Labs",
-  description: "Custom software development, web applications, mobile apps, AI automation, and UI/UX design services.",
+  title: "Services",
+  description:
+    "Custom software development services: mobile apps, UI/UX design, AI & automation, social media automation, web applications, custom software, and ERP systems.",
+  alternates: {
+    canonical: "https://insyralabs.vercel.app/services",
+  },
+  openGraph: {
+    title: "Services | Insyra Labs",
+    description:
+      "End-to-end design and engineering for digital products: mobile, web, AI automation, and custom software.",
+    url: "https://insyralabs.vercel.app/services",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Insyra Labs",
+    description:
+      "End-to-end design and engineering for digital products: mobile, web, AI automation, and custom software.",
+  },
 };
 
 export default function ServicesPage() {
